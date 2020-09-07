@@ -1,0 +1,1 @@
+export const getFavoriteMovies = state => state.app.favorites;
