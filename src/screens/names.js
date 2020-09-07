@@ -1,0 +1,3 @@
+export const WELCOME_SCREEN = 'WELCOME_SCREEN';
+export const HOME_SCREEN = 'HOME_SCREEN';
+export const FAVORITES_SCREEN = 'FAVORITES_SCREEN';
