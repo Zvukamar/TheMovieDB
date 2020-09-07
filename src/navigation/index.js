@@ -21,13 +21,21 @@ const Navigator = () => (
             />
 
             <Stack.Screen
-                name={names.HOME_SCREEN}
-                component={screens.HomeScreen}
+                name={names.MOVIES_SCREEN}
+                component={screens.MoviesScreen}
+                options={{ title: strings.movies_screen_title, headerBackTitle: strings.movies_screen_back }}
             />
 
             <Stack.Screen
                 name={names.FAVORITES_SCREEN}
                 component={screens.FavoritesScreen}
+                options={{ title: strings.favorites_screen_title, headerBackTitle: strings.favorites_screen_back }}
+            />
+
+            <Stack.Screen
+                name={names.DETAILS_SCREEN}
+                component={screens.DetailsScreen}
+                options={{ title: strings.details_screen_title, headerBackTitle: strings.details_screen_back }}
             />
 
         </Stack.Navigator>

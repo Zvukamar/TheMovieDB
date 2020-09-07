@@ -3,15 +3,15 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import { colors } from '../../utilities/styles';
 
-const FavoritesScreen = () => {
+const MoviesScreen = () => {
     return (
         <View style={s.container}>
-            <Text>Favorites Screen</Text>
+            <Text>Movies Screen</Text>
         </View>
     )
 }
 
-export default FavoritesScreen;
+export default MoviesScreen;
 
 const s = StyleSheet.create({
     container: {

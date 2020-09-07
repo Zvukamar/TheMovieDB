@@ -1,9 +1,11 @@
-import HomeScreen from './home';
+import MoviesScreen from './movies';
 import FavoritesScreen from './favorites';
 import WelcomeScreen from './welcome';
+import DetailsScreen from './details';
 
 export default {
-    HomeScreen,
+    WelcomeScreen,
+    MoviesScreen,
     FavoritesScreen,
-    WelcomeScreen
+    DetailsScreen
 };
