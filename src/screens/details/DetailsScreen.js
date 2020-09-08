@@ -1,25 +1,46 @@
-import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, Image } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 
 import { colors } from '../../utilities/styles';
+import Stars from '../../components/OListItem/Stars';
 
-const DetailsScreen = ({ navigation }) => {
+const DetailsScreen = ({ navigation, route }) => {
+    const { item } = route.params;
+
+    useEffect(() => {
+        navigation.setOptions({ title: item.title })
+    }, []);
 
     return (
-        <Layout style={s.container} level='1'>
-            <Text>Details Screen</Text>
+        <Layout style={styles.container} level='1'>
+            <Image
+                style={styles.image}
+                source={{ uri: `https://image.tmdb.org/t/p/w500/${item.poster_path}` }}
+                resizeMode='contain'
+            />
+            <Text style={styles.overview}>{item.overview}</Text>
+            <Stars rating={item.vote_average} />
         </Layout>
     )
 }
 
 export default DetailsScreen;
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
         backgroundColor: colors.$white,
+        paddingHorizontal: 20,
     },
+    image: {
+        width: 350,
+        height: 350,
+        marginVertical: 30
+    },
+    overview: {
+        fontSize: 14,
+        lineHeight: 20
+    }
 })

@@ -13,7 +13,7 @@ const MoviesScreen = () => {
             <FlatList
                 data={movies}
                 renderItem={({ item }) => <OListItem item={item} />}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.id.toString()}
             />
         </View>
     )
