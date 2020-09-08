@@ -3,6 +3,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { colors } from '../../utilities/styles';
+import strings from '../../utilities/strings';
 
 const ALLSTARS = 10;
 
@@ -27,7 +28,7 @@ const Stars = (props) => {
     }
     return (
         <View>
-            <Text style={styles.rating}>{`average rating: ${rating}`}</Text>
+            <Text style={styles.rating}>{`${strings.avarage_rating}: ${rating}`}</Text>
             <View style={styles.wrapper}>
                 {starsBody}
             </View>
@@ -46,7 +47,8 @@ const styles = StyleSheet.create({
         marginRight: 3
     },
     rating: {
-        color: 'white',
+        alignSelf: 'center',
+        color: colors.$black,
         fontSize: 18,
         marginBottom: 5,
         textTransform: 'capitalize'

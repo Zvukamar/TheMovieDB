@@ -7,6 +7,7 @@ import { colors } from '../../utilities/styles';
 import OButton from '../../components/OButton';
 import { fetchPopularMovies } from '../../utilities/APIUtils';
 import { useDispatch } from 'react-redux';
+import strings from '../../utilities/strings';
 
 const WelcomeScreen = ({ navigation }) => {
 
@@ -22,16 +23,12 @@ const WelcomeScreen = ({ navigation }) => {
     return (
         <Layout style={s.container} level='1'>
             <OButton
-                title='Movies'
+                title={strings.movies_button_title}
                 onPress={() => navigate(navigationActions.NavigateToMovies())}
             />
             <OButton
-                title='Favorites'
+                title={strings.favorites_button_title}
                 onPress={() => navigate(navigationActions.NavigateToFavorites())}
-            />
-            <OButton
-                title='Details'
-                onPress={() => navigate(navigationActions.NavigateToDetails())}
             />
         </Layout>
     )

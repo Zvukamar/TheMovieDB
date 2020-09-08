@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, Image } from 'react-native';
+import { StyleSheet, Text, Image, ScrollView } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 
 import { colors } from '../../utilities/styles';
+import OButton from '../../components/OButton';
 import Stars from '../../components/OListItem/Stars';
+import strings from '../../utilities/strings';
 
 const DetailsScreen = ({ navigation, route }) => {
     const { item } = route.params;
@@ -13,7 +15,7 @@ const DetailsScreen = ({ navigation, route }) => {
     }, []);
 
     return (
-        <Layout style={styles.container} level='1'>
+        <ScrollView style={styles.scrollview} contentContainerStyle={styles.container}>
             <Image
                 style={styles.image}
                 source={{ uri: `https://image.tmdb.org/t/p/w500/${item.poster_path}` }}
@@ -21,17 +23,20 @@ const DetailsScreen = ({ navigation, route }) => {
             />
             <Text style={styles.overview}>{item.overview}</Text>
             <Stars rating={item.vote_average} />
-        </Layout>
+            <OButton title={strings.add_to_favorites} style={styles.favoriteButton} />
+        </ScrollView>
     )
 }
 
 export default DetailsScreen;
 
 const styles = StyleSheet.create({
-    container: {
+    scrollview: {
         flex: 1,
-        alignItems: 'center',
         backgroundColor: colors.$white,
+    },
+    container: {
+        alignItems: 'center',
         paddingHorizontal: 20,
     },
     image: {
@@ -42,5 +47,9 @@ const styles = StyleSheet.create({
     overview: {
         fontSize: 14,
         lineHeight: 20
+    },
+    favoriteButton: {
+        width: '60%',
+        marginTop: 30
     }
 })

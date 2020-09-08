@@ -10,5 +10,16 @@ export default {
     details_screen_back: 'Back',
 
     // Favorites List
-    favorites_list_empty: 'Favorite list is empty'
+    favorites_list_empty: 'Favorite list is empty',
+
+    // Details
+    add_to_favorites: 'Add to favorites',
+    remove_from_favorites: 'Remove from favorites',
+
+    // Movies
+    avarage_rating: 'Avarage rating',
+
+    // Welcome
+    movies_button_title: 'Movies',
+    favorites_button_title: 'Favorites'
 }

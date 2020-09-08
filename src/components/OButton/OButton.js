@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import { Button } from '@ui-kitten/components';
 
-const OButton = ({ title, onPress }) => {
+const OButton = ({ title, onPress, style }) => {
     return (
         <Button
-            style={s.button}
+            style={[s.button, style]}
             onPress={onPress}
             appearance='outline'>
             {title}

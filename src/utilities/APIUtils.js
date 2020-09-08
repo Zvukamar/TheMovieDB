@@ -16,9 +16,9 @@ export const fetchPopularMovies = (page) => {
             const response = await axios.get(url);
             const { data } = response;
             const { results } = data;
-            console.log(results)
             dispatch(fetchMoviesSuccess(results))
         } catch (e) {
+            console.log('fetching error', e)
             dispatch(fetchMoviesFailed())
         }
     }
