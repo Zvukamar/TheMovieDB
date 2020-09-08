@@ -8,7 +8,7 @@ import OText from '../../components/OText';
 import strings from '../../utilities/strings';
 
 const FavoritesScreen = () => {
-    const favorites = useSelector(selectors.getFavoriteMovies);
+    const favorites = useSelector(selectors.getFavoritesSelector);
     if (favorites.length === 0) {
         return (
             <View style={s.container}>

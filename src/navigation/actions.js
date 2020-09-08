@@ -14,8 +14,9 @@ export const NavigateToFavorites = () => (
     })
 );
 
-export const NavigateToDetails = () => (
+export const NavigateToDetails = (item) => (
     CommonActions.navigate({
         name: names.DETAILS_SCREEN,
+        params: { item }
     })
 );

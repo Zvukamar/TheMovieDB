@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import appReducer from './app/appReducer';
+import moviesReducer from './movies/moviesReducer';
+import favoritesReducer from './favorites/favoritesReducer';
 
 export default combineReducers({
-    app: appReducer
+    movies: moviesReducer,
+    favorites: favoritesReducer
 })

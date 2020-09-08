@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 
 import * as navigationActions from '../../navigation/actions';
 import { colors } from '../../utilities/styles';
 import OButton from '../../components/OButton';
+import { fetchPopularMovies } from '../../utilities/APIUtils';
+import { useDispatch } from 'react-redux';
 
 const WelcomeScreen = ({ navigation }) => {
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchPopularMovies(1));
+    }, []);
 
     const navigate = (action) => {
         navigation.dispatch(action);
