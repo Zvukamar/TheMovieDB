@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import { colors } from '../../utilities/styles';
-import * as selectors from '../../redux/selectors';
+import * as selectors from '../../store/selectors';
 import OText from '../../components/OText';
 import strings from '../../utilities/strings';
 

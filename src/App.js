@@ -5,7 +5,7 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider } from '@ui-kitten/components';
 
 import Navigator from './navigation';
-import store from './redux/store';
+import store from './store';
 
 const App = () => {
   return (
