@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         color: colors.$black,
         fontSize: 18,
+        marginTop: 25,
         marginBottom: 5,
         textTransform: 'capitalize'
     }
