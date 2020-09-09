@@ -1,19 +1,31 @@
 import React from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
-import { useSelector } from 'react-redux';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { getMoviesSelector } from '../../store/selectors';
+import { getMoviesSelector, getCurrectPageSelector } from '../../store/selectors';
 import { colors } from '../../utilities/styles';
-import OListItem from '../../components/OListItem';
+import OList from '../../components/OList';
+import { fetchPopularMovies } from '../../utilities/APIUtils';
 
 const MoviesScreen = () => {
+    const dispatch = useDispatch();
     const movies = useSelector(getMoviesSelector);
+    const page = useSelector(getCurrectPageSelector);
+
+    const handleOnEndReached = () => {
+        dispatch(fetchPopularMovies(page))
+    }
+
     return (
         <View style={s.container}>
-            <FlatList
+            <OList
                 data={movies}
-                renderItem={({ item }) => <OListItem item={item} />}
-                keyExtractor={item => item.id.toString()}
+                onEndReached={handleOnEndReached}
+                ListFooterComponent={() => (
+                    <ActivityIndicator
+                        style={s.loading}
+                        color={colors.$black} />
+                )}
             />
         </View>
     )
@@ -26,4 +38,7 @@ const s = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.$white,
     },
+    loading: {
+        marginVertical: 10
+    }
 })

@@ -4,6 +4,7 @@ const initialState = {
     list: [],
     error: false,
     loading: false,
+    page: 1,
 }
 
 export default appReducer = (state = initialState, action) => {
@@ -15,6 +16,7 @@ export default appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
+                page: state.page + 1,
                 list: [...state.list, ...action.payload]
             }
         }

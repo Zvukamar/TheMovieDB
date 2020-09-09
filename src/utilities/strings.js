@@ -15,6 +15,8 @@ export default {
     // Details
     add_to_favorites: 'Add to favorites',
     remove_from_favorites: 'Remove from favorites',
+    toast_added_to_favorites: 'The movie was added to favorites',
+    toast_removed_from_favorites: 'The movie was removed from favorites',
 
     // Movies
     avarage_rating: 'Avarage rating',
